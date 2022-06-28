@@ -38,10 +38,10 @@ jobs:
       - name: Copy dist to VPS
         uses: appleboy/scp-action@master
         with:
-          host: '202.83.161.119'
-          username: 'webteam'
-          port: '2021'
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: 202.83.161.119
+          username: webteam
+          password: N0pass@1122
+          port: 2021
           # Selecting all folders except "node_modules"
           source: "./build/*"
           # The path is based on the directory where the user logged into the server starts
