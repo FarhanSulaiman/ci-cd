@@ -31,9 +31,8 @@ jobs:
 
       # install deps
       - name: install deps
-        run: npm i
-      # create build
-      - name: create build
-        run: npm run build
+        run: |
+             npm i
+             npm run build 
 
 
