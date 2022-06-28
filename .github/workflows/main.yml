@@ -34,5 +34,17 @@ jobs:
         run: |
              npm i
              npm run build 
+     #deploy
+      - name: Copy dist to VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: '202.83.161.119'
+          username: 'webteam'
+          port: '2021'
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Selecting all folders except "node_modules"
+          source: "./build/*"
+          # The path is based on the directory where the user logged into the server starts
+          target: "/opt/tomcat/webapps/test"
 
 
